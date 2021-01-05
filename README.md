@@ -8,11 +8,11 @@ My family buys a lot of groceries and we forget what we have. Therefore I though
 - I will be using amplify to make the server stuff easier
 
 ## Checklist
-- Frontend []
+- [] Frontend 
     - [] AWS Amplify 
         - [] setup aws amplify on the project
         - [] read more about what is needed and update this list accordingly
-- Backend []
+- [] Backend
     - [] Barcode Stuff 
         - [] Setup Camera and Barcode Stuff within expo 
         - [] code a working barcode scanner 
