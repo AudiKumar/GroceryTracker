@@ -9,12 +9,17 @@ My family buys a lot of groceries and we forget what we have. Therefore I though
 
 ## Checklist
 - [ ] Frontend 
-    - [ ] AWS Amplify 
-        - [ ] setup aws amplify on the project
-        - [ ] read more about what is needed and update this list accordingly
-- [ ] Backend
+    - [x] Determine What Screens are Needed
     - [ ] Barcode Stuff 
         - [ ] Setup Camera and Barcode Stuff within expo 
         - [ ] code a working barcode scanner 
         - [ ] figure out how to get the information needed for the bar code
+
+- [ ] Backend
+    - [ ] AWS Amplify 
+        - [x] setup aws amplify on the project
+        - [x] get auth working
+        - [ ] get lamba working
+        - [ ] read more about what is needed and update this list accordingly
+
 
