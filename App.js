@@ -5,7 +5,7 @@
 // 2) npm install
 // 3) after you install all of the expo dependencies you'll be able to start the project normally: expo install
 
-import { StatusBar } from 'expo-status-bar';
+//import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
