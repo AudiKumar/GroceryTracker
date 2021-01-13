@@ -9,9 +9,13 @@ My family buys a lot of groceries and we forget what we have. Therefore I though
 
 ## Checklist
 - [ ] Frontend 
-    - [x] Determine What Screens are Needed
+    - Screens[ ]
+        - [x] Determine What Screens are Needed
+        - [ ] Create Shopping List Screen
+        - [ ] Create Inventory Screen 
+        - [ ] Create BarCode Screen
     - [ ] Barcode Stuff 
-        - [ ] Setup Camera and Barcode Stuff within expo 
+        - [x] Setup Camera and Barcode Stuff within expo 
         - [ ] code a working barcode scanner 
         - [ ] figure out how to get the information needed for the bar code
 
@@ -20,6 +24,5 @@ My family buys a lot of groceries and we forget what we have. Therefore I though
         - [x] setup aws amplify on the project
         - [x] get auth working
         - [ ] get lamba working
-        - [ ] read more about what is needed and update this list accordingly
 
 

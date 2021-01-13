@@ -17,15 +17,21 @@ import Amplify from 'aws-amplify';
 import config from './aws-exports';
 Amplify.configure(config);
 
+//navigation 
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+
 class App extends React.Component{
   render(){
     return ( 
-      <View style={styles.container}>
+      <NavigationContainer>{
 
-        <Text> Open up App.js to start working on your app! </Text>
-        <Text> YO ! </Text>
-      
-      </View>
+        <View style={styles.container}>
+          <Text> Open up App.js to start working on your app! </Text>
+          <Text> YO ! </Text>
+        </View>
+
+      }</NavigationContainer>
     );
   }
 }
