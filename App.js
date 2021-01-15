@@ -20,18 +20,30 @@ Amplify.configure(config);
 //navigation 
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
+import {createStackNavigator} from "@react-navigation/stack";
+
+function shoppingListScreen(){
+  return(
+    <View style={styles.container}> 
+      <text> THIS IS THE SHOPPING LIST SCREEN THE GOAL IS TO USE THIS FOR MAKIKING A SHOPPING LIST </text>
+    </View>
+  );
+
+}
+
+
+const Stack = createStackNavigator();
 
 class App extends React.Component{
   render(){
     return ( 
-      <NavigationContainer>{
+      <NavigationContainer>
+        
+        <Stack.Navigator>
+          <Stack.Screen name = "Shopping List" component = {shoppingListScreen} />
+        </Stack.Navigator>
 
-        <View style={styles.container}>
-          <Text> Open up App.js to start working on your app! </Text>
-          <Text> YO ! </Text>
-        </View>
-
-      }</NavigationContainer>
+      </NavigationContainer>
     );
   }
 }
