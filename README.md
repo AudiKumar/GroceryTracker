@@ -9,7 +9,7 @@ My family buys a lot of groceries and we forget what we have. Therefore I though
 
 ## Checklist
 - [ ] Frontend 
-    - [ ]Screens
+    - [ ] Screens
         - [x] Determine What Screens are Needed
         - [ ] Screen Setup
             - [x] Create Shopping List Screen
