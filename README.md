@@ -9,15 +9,21 @@ My family buys a lot of groceries and we forget what we have. Therefore I though
 
 ## Checklist
 - [ ] Frontend 
-    - Screens[ ]
+    - [ ]Screens
         - [x] Determine What Screens are Needed
-        - [ ] Create Shopping List Screen
-        - [ ] Create Inventory Screen 
-        - [ ] Create BarCode Screen
-    - [ ] Barcode Stuff 
-        - [x] Setup Camera and Barcode Stuff within expo 
-        - [ ] code a working barcode scanner 
-        - [ ] figure out how to get the information needed for the bar code
+        - [ ] Screen Setup
+            - [x] Create Shopping List Screen
+            - [ ] Create Inventory Screen 
+            - [ ] Create BarCode Screen
+        - [ ] Shopping List
+            - [ ] create the inputs and stuff for list 
+            - [ ] may need to create an add item screen for this screen to make it look nice
+        - [ ] Inventory Screen
+            - [ ] Add Folders by the Categories Needed
+        - [ ] Barcode Screen 
+            - [x] Setup Camera and Barcode Stuff within expo 
+            - [ ] code a working barcode scanner 
+            - [ ] figure out how to get the information needed for the bar code
 
 - [ ] Backend
     - [ ] AWS Amplify 
