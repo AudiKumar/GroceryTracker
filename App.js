@@ -11,11 +11,15 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import {BarCodeScanner} from 'expo-barcode-scanner';
 
-//amplify stuff
-import { withAuthenticator } from 'aws-amplify-react-native';
+//basic amplify setup
+//import { withAuthenticator } from 'aws-amplify-react-native';
 import Amplify from 'aws-amplify';
 import config from './aws-exports';
 Amplify.configure(config);
+
+//authtication 
+import {Auth} from 'aws-amplify';
+
 
 //navigation 
 import 'react-native-gesture-handler';
@@ -50,6 +54,49 @@ function barCodeScreen(){
 const Stack = createStackNavigator();
 
 class App extends React.Component{
+
+  //all of the stuff needed for auth
+  state = {
+    username: '', 
+    password: '', 
+    phoneNumber: '', 
+    email: '', 
+    authCode: '',
+    user: {}
+  }
+
+  async signUp(){
+    const { username, password, email, phoneNumber} = this.state
+    await Auth.signUp({
+      username, 
+      password, 
+      attributes: {email, phoneNumber}
+    })
+
+    console.log('sign up successful')
+  }
+
+  async confirmSignUp(){
+    const {username, authCode} = this.state
+    await Auth.configSignignUp(username, authCode)
+    console.log('sign up has been confirmed')
+  }
+
+  async signIn(){
+    const {username, password} = this.state
+    const user = await Auth.signIn(username, password)
+
+    this.setState({ user })
+    console.log('sign in successful')
+
+  } 
+
+  async confirmSignIn(){
+    const {user, authCode} = this.state
+    await Auth.configSignignIn(user, authCode)
+    console.log('user now successfully signed in to the app!!')
+  }
+  
   render(){
     return ( 
       <NavigationContainer>
@@ -63,7 +110,7 @@ class App extends React.Component{
   }
 }
 
-export default withAuthenticator(App, { includeGreetings: true } )
+//export default withAuthenticator(App, { includeGreetings: true } )
 
 const styles = StyleSheet.create({
   container: {
