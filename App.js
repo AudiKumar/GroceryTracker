@@ -25,7 +25,7 @@ import {createStackNavigator} from "@react-navigation/stack";
 function shoppingListScreen(){
   return(
     <View style={styles.container}> 
-      <text> THIS IS THE SHOPPING LIST SCREEN THE GOAL IS TO USE THIS FOR MAKIKING A SHOPPING LIST </text>
+      <Text> THIS IS THE SHOPPING LIST SCREEN THE GOAL IS TO USE THIS FOR MAKIKING A SHOPPING LIST </Text>
     </View>
   );
 }
@@ -33,7 +33,7 @@ function shoppingListScreen(){
 function inventoryScreen(){
   return(
     <View style={styles.container}>   
-      <text> This is the inventory screen </text>
+      <Text> This is the inventory screen </Text>
     </View>
   );
 }
@@ -42,11 +42,10 @@ function inventoryScreen(){
 function barCodeScreen(){
   return(
     <View style={styles.container}> 
-      <text>This is the barcode screen</text>
+      <Text>This is the barcode screen</Text>
     </View>
   );
 }
-
 
 const Stack = createStackNavigator();
 
