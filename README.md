@@ -11,10 +11,7 @@ My family buys a lot of groceries and we forget what we have. Therefore I though
 - [ ] Frontend 
     - [ ] Screens
         - [x] Determine What Screens are Needed
-        - [ ] Screen Setup
-            - [x] Create Shopping List Screen
-            - [ ] Create Inventory Screen 
-            - [ ] Create BarCode Screen
+        - [x] Screen Function Setup
         - [ ] Shopping List
             - [ ] create the inputs and stuff for list 
             - [ ] may need to create an add item screen for this screen to make it look nice
@@ -26,6 +23,8 @@ My family buys a lot of groceries and we forget what we have. Therefore I though
             - [ ] figure out how to get the information needed for the bar code
 
 - [ ] Backend
+    - [ ] Auth 
+        - [ ] Setup Auth a little better cause rn it looks ugly
     - [ ] AWS Amplify 
         - [x] setup aws amplify on the project
         - [x] get auth working
