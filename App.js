@@ -28,7 +28,23 @@ function shoppingListScreen(){
       <text> THIS IS THE SHOPPING LIST SCREEN THE GOAL IS TO USE THIS FOR MAKIKING A SHOPPING LIST </text>
     </View>
   );
+}
 
+function inventoryScreen(){
+  return(
+    <View style={styles.container}>   
+      <text> This is the inventory screen </text>
+    </View>
+  );
+}
+
+
+function barCodeScreen(){
+  return(
+    <View style={styles.container}> 
+      <text>This is the barcode screen</text>
+    </View>
+  );
 }
 
 
