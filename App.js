@@ -7,7 +7,7 @@
 
 //import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 import {BarCodeScanner} from 'expo-barcode-scanner';
 
@@ -17,41 +17,73 @@ import Amplify from 'aws-amplify';
 import config from './aws-exports';
 Amplify.configure({config, Analytics:{disabled: true} });
 
-//authtication 
-import {Auth} from 'aws-amplify';
-
 
 //navigation 
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import {createStackNavigator} from "@react-navigation/stack";
 
-function shoppingListScreen(){
+const Stack = createStackNavigator();
+
+
+function shoppingListScreen({navigation}){
   return(
     <View style={styles.container}> 
-      <Text> THIS IS THE SHOPPING LIST SCREEN THE GOAL IS TO USE THIS FOR MAKIKING A SHOPPING LIST </Text>
+      <Text> THIS IS THE SHOPPING LIST SCREEN </Text>
+
+      <Button 
+        title="Inventory"
+        onPress={() => navigation.navigate("Inventory")}
+      />
+
+      <Button 
+        title="Scan Items"
+        onPress={() => navigation.navigate("Barcode Scanner")}
+      />
     </View>
   );
 }
 
-function inventoryScreen(){
+function inventoryScreen( {navigation} ){
   return(
     <View style={styles.container}>   
       <Text> This is the inventory screen </Text>
+
+      <Button 
+        title="Scan Items"
+        onPress={() => navigation.navigate("Barcode Scanner")}
+      />
+
+      <Button 
+        title="Shopping List"
+        onPress={() => navigation.navigate("Shopping List")}
+      />
+
     </View>
   );
 }
 
 
-function barCodeScreen(){
+function barCodeScreen( {navigation} ){
   return(
     <View style={styles.container}> 
       <Text>This is the barcode screen</Text>
+
+      <Button 
+        title="Inventory"
+        onPress={() => navigation.navigate("Inventory")}
+      />
+
+      <Button 
+        title="Shopping List"
+        onPress={() => navigation.navigate("Shopping List")}
+      />
+
     </View>
   );
 }
 
-const Stack = createStackNavigator();
+
 
 class App extends React.Component{
 
@@ -61,6 +93,9 @@ class App extends React.Component{
         
         <Stack.Navigator>
           <Stack.Screen name = "Shopping List" component = {shoppingListScreen} />
+          <Stack.Screen name = "Inventory" component = {inventoryScreen} />
+          <Stack.Screen name = "Barcode Scanner" component = {barCodeScreen} />
+
         </Stack.Navigator>
 
       </NavigationContainer>
