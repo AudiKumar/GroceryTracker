@@ -12,6 +12,7 @@ My family buys a lot of groceries and we forget what we have. Therefore I though
     - [ ] Screens
         - [x] Determine What Screens are Needed
         - [x] Screen Function Setup
+        - [x] connect all the screens together 
         - [ ] Shopping List
             - [ ] create the inputs and stuff for list 
             - [ ] may need to create an add item screen for this screen to make it look nice
