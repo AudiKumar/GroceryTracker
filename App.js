@@ -7,7 +7,7 @@
 
 //import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
 import {BarCodeScanner} from 'expo-barcode-scanner';
 
@@ -15,41 +15,46 @@ import {BarCodeScanner} from 'expo-barcode-scanner';
 import { withAuthenticator } from 'aws-amplify-react-native';
 import Amplify from 'aws-amplify';
 import config from './aws-exports';
-Amplify.configure({   config, Analytics:{disabled: true} }  );
+Amplify.configure(   config );
 
 
 //navigation 
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import {createStackNavigator} from "@react-navigation/stack";
+import { color } from 'react-native-reanimated';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const Stack = createStackNavigator();
 
 
 function shoppingListScreen({navigation}){
   return(
-    <View style={styles.container}> 
-      <Text> THIS IS THE SHOPPING LIST SCREEN </Text>
+    <SafeAreaView style={styles.container}>
 
-      <Button 
-        title="Inventory"
-        onPress={() => navigation.navigate("Inventory")}
-      />
+      <View style={styles.navButtonLeft}>
+        <Button title="Inventory" onPress={() => navigation.navigate("Inventory")}/>
+      </View>
 
-      <Button 
-        title="Scan Items"
-        onPress={() => navigation.navigate("Barcode Scanner")}
-      />
-    </View>
+      <View style={styles.navButtonRight} >
+        <Button 
+          title="Scan Items" 
+          color="#841584" 
+          onPress={() => navigation.navigate("Barcode Scanner")}/>
+      </View>
+
+    </SafeAreaView>
   );
 }
 
 function inventoryScreen( {navigation} ){
   return(
-    <View style={styles.container}>   
-      <Text> This is the inventory screen </Text>
+    <View style={styles.container}  >   
+      <Text s> 
+        This is the inventory screen 
+      </Text>
 
-      <Button 
+      <Button style={styles}
         title="Scan Items"
         onPress={() => navigation.navigate("Barcode Scanner")}
       />
@@ -107,6 +112,30 @@ export default withAuthenticator(App, {
 } )
 
 const styles = StyleSheet.create({
+  navButtonLeft: {
+    backgroundColor:'#000',
+    borderRadius: 7,
+    flexDirection: 'row-reverse',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    position:'absolute',
+    bottom: 0,
+    width: 200,
+    height: 150, 
+  },
+  navButtonRight: {
+    backgroundColor: '#FFA500',
+    borderRadius: 7,
+    flexDirection: 'row-reverse',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'flex-end',
+    position:'absolute',
+    bottom: 0,
+    width: 200,
+    height: 150, 
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
