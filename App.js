@@ -21,49 +21,24 @@ Amplify.configure(   config );
 //navigation 
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import {createStackNavigator} from "@react-navigation/stack";
-import { color } from 'react-native-reanimated';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-const Stack = createStackNavigator();
 
+//const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator(); 
 
 function shoppingListScreen({navigation}){
   return(
-    <SafeAreaView style={styles.container}>
-
-      <View style={styles.navButtonLeft}>
-        <Button title="Inventory" onPress={() => navigation.navigate("Inventory")}/>
-      </View>
-
-      <View style={styles.navButtonRight} >
-        <Button 
-          title="Scan Items" 
-          color="#841584" 
-          onPress={() => navigation.navigate("Barcode Scanner")}/>
-      </View>
-
-    </SafeAreaView>
+    <View style={styles.container}  >   
+      <Text>shopping list </Text>  
+    </View>
   );
 }
 
 function inventoryScreen( {navigation} ){
   return(
-    <View style={styles.container}  >   
-      <Text s> 
-        This is the inventory screen 
-      </Text>
-
-      <Button style={styles}
-        title="Scan Items"
-        onPress={() => navigation.navigate("Barcode Scanner")}
-      />
-
-      <Button 
-        title="Shopping List"
-        onPress={() => navigation.navigate("Shopping List")}
-      />
-
+    <View style={styles.container}  >  
+      <Text> inventory </Text>   
     </View>
   );
 }
@@ -71,19 +46,8 @@ function inventoryScreen( {navigation} ){
 
 function barCodeScreen( {navigation} ){
   return(
-    <View style={styles.container}> 
-      <Text>This is the barcode screen</Text>
-
-      <Button 
-        title="Inventory"
-        onPress={() => navigation.navigate("Inventory")}
-      />
-
-      <Button 
-        title="Shopping List"
-        onPress={() => navigation.navigate("Shopping List")}
-      />
-
+    <View style={styles.container}  > 
+      <Text> barCode </Text>  
     </View>
   );
 }
@@ -95,14 +59,11 @@ class App extends React.Component{
   render(){
     return ( 
       <NavigationContainer>
-        
-        <Stack.Navigator>
-          <Stack.Screen name = "Shopping List" component = {shoppingListScreen} />
-          <Stack.Screen name = "Inventory" component = {inventoryScreen} />
-          <Stack.Screen name = "Barcode Scanner" component = {barCodeScreen} />
-
-        </Stack.Navigator>
-
+        <Tab.Navigator tabBarOptions={{labelStyle: {fontSize: 22, },}}>
+          <Tab.Screen name="Inventory" component= {inventoryScreen}/>
+          <Tab.Screen name="Scan" component= {barCodeScreen}/>
+          <Tab.Screen name="List" component= {shoppingListScreen}/>
+        </Tab.Navigator>
       </NavigationContainer>
     );
   }
@@ -112,34 +73,17 @@ export default withAuthenticator(App, {
 } )
 
 const styles = StyleSheet.create({
-  navButtonLeft: {
-    backgroundColor:'#000',
-    borderRadius: 7,
-    flexDirection: 'row-reverse',
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'flex-start',
-    position:'absolute',
-    bottom: 0,
-    width: 200,
-    height: 150, 
-  },
-  navButtonRight: {
-    backgroundColor: '#FFA500',
-    borderRadius: 7,
-    flexDirection: 'row-reverse',
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'flex-end',
-    position:'absolute',
-    bottom: 0,
-    width: 200,
-    height: 150, 
-  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  }, 
 });
