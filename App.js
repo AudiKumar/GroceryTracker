@@ -52,14 +52,11 @@ function barCodeScreen( {navigation} ){
   );
 }
 
-
-
 class App extends React.Component{
-
   render(){
     return ( 
       <NavigationContainer>
-        <Tab.Navigator tabBarOptions={{labelStyle: {fontSize: 22, },}}>
+        <Tab.Navigator tabBarOptions={ { activeTintColor: '#EB3B52',labelStyle: {fontSize: 22}, style:{backgroundColor:'#CDCDCD',} ,}}>
           <Tab.Screen name="Inventory" component= {inventoryScreen}/>
           <Tab.Screen name="Scan" component= {barCodeScreen}/>
           <Tab.Screen name="List" component= {shoppingListScreen}/>
@@ -75,15 +72,8 @@ export default withAuthenticator(App, {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#E7E7E7',
     alignItems: 'center',
     justifyContent: 'center',
   },
-
-
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  }, 
 });
